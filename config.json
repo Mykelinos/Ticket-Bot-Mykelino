@@ -2,7 +2,7 @@
   "clientId": "", // ID DEL SERVER
   "token": "", // TOKEN BOT
 
-  "parentOpened": "",
+  "parentOpened": "", // ID CATEGORIA DOVE DEVE ESSERE CREATO IL TICKET
   "Category1": "Donazione", // SCEGLIERE CATEGORIE
   "Category2": "Generale",
   "Category3": "PartnerShip",
