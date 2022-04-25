@@ -51,6 +51,6 @@ client.login(``);
 
 
 client.on('ready', () => {
-  client.user.setActivity('!help - !ticket', { type: 'PLAYING' }); 
-  client.user.setStatus('dnd') // idle / dnd / invisible
+  client.user.setActivity('S & M Bot', { type: ' WATCHING' }); //oppure LISTENING, PLAYING
+  client.user.setStatus('online') //oppure idle, dnd, invisible
 })
