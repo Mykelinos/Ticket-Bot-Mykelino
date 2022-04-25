@@ -47,7 +47,7 @@ client.on('interactionCreate', async interaction => {
   };
 });
 
-client.login(``);
+client.login(``); // token bot
 
 
 client.on('ready', () => {
