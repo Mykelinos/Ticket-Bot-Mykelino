@@ -31,7 +31,7 @@ module.exports = {
 
     oniChan.bulkDelete(100).then(() => {
       sendTicketMSG()
-      console.log(chalk.green('[Tickety]') + chalk.cyan(' Sent the ticket creation widget..'))
+      console.log(chalk.green('[Ticket]') + chalk.cyan(' Sent the ticket creation widget..'))
     })
   },
 };
