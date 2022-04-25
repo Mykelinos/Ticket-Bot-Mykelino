@@ -5,10 +5,10 @@ const {
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('add')
-    .setDescription('Add someone to the ticket')
+    .setDescription('Aggiungi qualcuno al ticket!')
     .addUserOption(option =>
       option.setName('target')
-        .setDescription('Member to add to the ticket')
+        .setDescription('Utente aggiunto al ticket correttamente')
         .setRequired(true)),
   async execute(interaction, client) {
     const chan = client.channels.cache.get(interaction.channelId);
@@ -36,7 +36,7 @@ module.exports = {
       });
     } else {
       interaction.reply({
-        content: 'You are not in a ticket channel!',
+        content: 'Non sei nel canale di un ticket!',
         ephemeral: true
       });
     };
