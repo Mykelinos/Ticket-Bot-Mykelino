@@ -1,14 +1,14 @@
 {
-  "clientId": "",
-  "token": "",
+  "clientId": "", // ID DEL SERVER
+  "token": "", // TOKEN BOT
 
   "parentOpened": "",
-  "Category1": "Donazione",
+  "Category1": "Donazione", // SCEGLIERE CATEGORIE
   "Category2": "Generale",
   "Category3": "PartnerShip",
 
-  "roleSupport": "",
+  "roleSupport": "", // RUOLO STAFF
   
-  "logsTicket": "",
-  "ticketChannel": ""
+  "logsTicket": "", // LOG TICKET (TRANSCRIPT IN PASTBIN)
+  "ticketChannel": "" // CANALE TICKET
 }
