@@ -31,13 +31,13 @@ module.exports = {
         type: 'text',
       }).then(async c => {
         interaction.reply({
-          content: `Ticket created! <#${c.id}>`,
+          content: `Ticket creato! <#${c.id}>`,
           ephemeral: true
         });
 
         const embed = new client.discord.MessageEmbed()
           .setColor('6d6ee8')
-          .setAuthor({name: `${interaction.user.username}'s Ticket`, iconURL: 'https://i.imgur.com/oO5ZSRK.png'})
+          .setAuthor({name: `${interaction.user.username}'s Ticket`, iconURL: 'https://cdn.discordapp.com/attachments/918546224016146432/961316152842281011/standard_5.gif'})
           .setDescription('Seleziona la categoria del ticket!')
           .setFooter({text: `${client.user.tag}`, iconURL: client.user.displayAvatarURL()})
           .setTimestamp();
@@ -112,7 +112,7 @@ module.exports = {
 
         collector.on('end', collected => {
           if (collected.size < 1) {
-            c.send(`Nessuna categoria selezionata. Closing the ticket...`).then(() => {
+            c.send(`Nessuna categoria selezionata. Chiudendo il ticket...`).then(() => {
               setTimeout(() => {
                 if (c.deletable) {
                   c.delete();
@@ -177,7 +177,7 @@ module.exports = {
             .then(async () => {
               const embed = new client.discord.MessageEmbed()
                 .setColor('6d6ee8')
-                .setAuthor({name: 'Ticket', iconURL: 'https://i.imgur.com/oO5ZSRK.png'})
+                .setAuthor({name: 'Ticket', iconURL: 'https://cdn.discordapp.com/attachments/918546224016146432/961316152842281011/standard_5.gif'})
                 .setDescription('```Ticket Summary```')
                 .setFooter({text: `${client.user.tag}`, iconURL: client.user.displayAvatarURL()})
                 .setTimestamp();
@@ -201,7 +201,7 @@ module.exports = {
         };
         if (i.customId == 'no') {
           interaction.editReply({
-            content: 'Aborting closure!',
+            content: 'Chiusura annullata!',
             components: []
           });
           collector.stop();
@@ -211,7 +211,7 @@ module.exports = {
       collector.on('end', (i) => {
         if (i.size < 1) {
           interaction.editReply({
-            content: 'Aborting closure!',
+            content: 'Chiusura annullata!',
             components: []
           });
         };
@@ -223,7 +223,7 @@ module.exports = {
       const chan = guild.channels.cache.get(interaction.channelId);
 
       interaction.reply({
-        content: 'Saving Messages...'
+        content: 'Salvataggio dei messaggi...'
       });
 
       chan.messages.fetch().then(async (messages) => {
@@ -234,14 +234,14 @@ module.exports = {
         var paste = new PrivateBinClient("https://privatebin.net/");
         var result = await paste.uploadContent(a, {uploadFormat: 'markdown'})
             const embed = new client.discord.MessageEmbed()
-              .setAuthor({name: 'Ticket Logs', iconURL: 'https://i.imgur.com/oO5ZSRK.png'})
+              .setAuthor({name: 'Ticket Logs', iconURL: 'https://cdn.discordapp.com/attachments/918546224016146432/961316152842281011/standard_5.gif'})
               .setDescription(`📰 Logs for ticket \`${chan.id}\` | created by <@!${chan.topic}> | closed by <@!${interaction.user.id}>\n\nLogs: [**Click here to see the logs**](${getPasteUrl(result)})`)
               .setColor('2f3136')
-              .setFooter({text: "This log will be deleted in 24 hrs!"})
+              .setFooter({text: "Questo log verrà eliminato entro 24 ore!"})
               .setTimestamp();
 
             const embed2 = new client.discord.MessageEmbed()
-              .setAuthor({name: 'Ticket Logs', iconURL: 'https://i.imgur.com/oO5ZSRK.png'})
+              .setAuthor({name: 'Ticket Logs', iconURL: 'https://cdn.discordapp.com/attachments/918546224016146432/961316152842281011/standard_5.gif'})
               .setDescription(`📰 Logs for ticket \`${chan.id}\`: [**Click here to see the logs**](${getPasteUrl(result)})`)
               .setColor('2f3136')
               .setFooter({text: "This log will be deleted in 24 hrs!"})
@@ -249,8 +249,8 @@ module.exports = {
 
             client.channels.cache.get(client.config.logsTicket).send({
               embeds: [embed]
-            }).catch(() => console.log("Ticket log channel not found."));
-            chan.send('Deleting channel...');
+            }).catch(() => console.log("Canale log ticket non trovato"));
+            chan.send('Eliminando il canale...');
 
             setTimeout(() => {
               chan.delete();
