@@ -5,10 +5,11 @@ const {
   module.exports = {
     data: new SlashCommandBuilder()
       .setName('remove')
-      .setDescription('Remove someone from the ticket')
+      .setDescription('Rimuovi un utente da un ticket')
       .addUserOption(option =>
         option.setName('target')
-        .setDescription('Member to remove from the ticket')
+        .setDescription('Utente da rimuovere dal ticket
+')
         .setRequired(true)),
     async execute(interaction, client) {
       const chan = client.channels.cache.get(interaction.channelId);
@@ -36,7 +37,7 @@ const {
         });
       } else {
         interaction.reply({
-          content: 'You are not in a ticket channel!',
+          content: 'Non sei in un canale di un ticket!',
           ephemeral: true
         });
       };
